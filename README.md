@@ -4,10 +4,12 @@ Sample script to delete all Events for a specified EventTypeId.  The EventType c
 
 ## Usage
 - Requires Python 3.7+
-- Install dependencies `pip install -f requirements.txt`
+- Install dependencies `pip install -r requirements.txt`
 - Update `appsettings.json` accordingly, note you will need a [Client-Credentials Client Id and Secret](https://docs.aveva.com/bundle/connect-data-services/page/1263324.html) 
 - Specify the `EventTypeId` and optionally `DeleteEventType` on lines 5 and 6 of `Program.py`
 - Run the script with `python Program.py`
+
+## Disclaimer
 
 **Please Note**: These code samples are not part of a supported product release. While they demonstrate the use of our APIs and technology, they come as-is without the following features or guarantees associated with official product releases:
 
