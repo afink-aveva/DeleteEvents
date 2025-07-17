@@ -19,6 +19,8 @@ adh_client = adh_sample_library_preview.ADHClient(
     )
 namespaceid = appsettings.get('NamespaceId')
 
+print(f"Attempting to get events for EventTypeId {eventTypeId}. This may take some time for large numbers of events...")
+
 def getEvents(namespaceid,selectedEventType,filter,continuation_token=""):
   result = []
   while True:
@@ -32,7 +34,7 @@ def getEvents(namespaceid,selectedEventType,filter,continuation_token=""):
 
 eventType = adh_client.EventTypes.getEventType(namespace_id=namespaceid, event_type_id=eventTypeId)
 events = getEvents(namespaceid=namespaceid,selectedEventType=eventType.Id,filter=None)
-print(f"Found {len(events)} events to delete.  DeleteEventType: {deleteEventType}")
+print(f"Found {len(events)} events to delete for EventTypeId {eventType.Id}.  DeleteEventType: {deleteEventType}")
 
 proceed = input("Continue? (y/n)")
 
