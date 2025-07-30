@@ -24,7 +24,7 @@ print(f"Attempting to get events for EventTypeId {eventTypeId}. This may take so
 def getEvents(namespaceid,selectedEventType,filter,continuation_token=""):
   result = []
   while True:
-    response = adh_client.Events.getEvents(namespaceid,selectedEventType,filter=filter,continuation_token=continuation_token)
+    response = adh_client.Events.getEvents(namespaceid,selectedEventType, fields="id", filter=filter,continuation_token=continuation_token)
     for event in response['Results']:
       result.append(event)
     continuation_token = response['ContinuationToken']
